@@ -1,0 +1,25 @@
+<h3>冬</h3>
+
+
+
+
+<% @winters.each do |t| %>
+
+
+
+              <div class="gurume">
+               <p><%= t.name %><br></p>
+               <p><%= image_tag t.image_url, size: "250x200" if t.image? %></p>              
+              </div>
+
+            
+              <div class="itirann4">
+              <%= link_to "詳細へ", sweet_path(t.id) %>
+              <%= link_to "編集する", edit_sweet_path(t.id) %>
+              <%= link_to "新規投稿ページへ", new_sweet_path(t.id) %>
+              <%= link_to "削除する", sweet_path(t.id), method: :delete %>
+                
+              </div>
+
+<% end %>
+

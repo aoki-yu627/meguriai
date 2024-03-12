@@ -1,0 +1,14 @@
+<div class="tweets-container">
+    <% @sweets.each do |t| %>
+      <div class="">
+      <%= t.user.email %>
+       <%= image_tag t.image_url, size: "250x200" if t.image? %>
+        <%= t.genre %>
+
+        <%= t.created_at %>
+        <%= link_to "詳細へ", sweet_path(t.id) %>
+        <%= link_to "編集する", edit_sweet_path(t.id) %>
+        <%= link_to "新規投稿ページへ", new_sweet_path(t.id) %>
+        <%= link_to "削除する", sweet_path(t.id), method: :delete %>
+        </div>
+      <% end %>

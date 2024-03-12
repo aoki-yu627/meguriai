@@ -1,0 +1,41 @@
+<div class="main">
+<%= form_tag({controller:"sweets",action:"search"}, method: :get) do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag '検索する'  %>
+  <% end %>
+
+<h1>めぐりあい</h1>
+
+  <div class="topimage">
+  <%= image_tag "sample.jpg.jpg", style: "width: 1000px"%>
+  </div>
+
+  <div class="container">
+   <div class="springimg">
+   <%= image_tag "春イメージ.jpg"%>
+   </div>
+
+   <div class="summerimg">
+   <%= image_tag "summer.jpg"%>
+   </div>
+
+   <div class="autumnimg">
+   <%= image_tag "autumn.jpg"%>
+   </div>
+
+   <div class="winterimg">
+   <%= image_tag "冬イメージ.jpg"%>
+   </div>
+  </div>
+
+  
+      <%= link_to "一覧へ戻る", sweets_itiran_path %>
+      <%= link_to "春", sweets_spring_path %>
+      <%= link_to "夏", sweets_summer_path %>
+      <%= link_to "秋", sweets_autumn_path %>
+      <%= link_to "冬", sweets_winter_path %>
+
+
+
+
+</div>

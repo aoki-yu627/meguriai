@@ -1,0 +1,40 @@
+<h1>めぐりあい</h1>
+<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<h3>新規投稿ページ</h3>
+<%= form_for @sweet do |f| %>
+
+   
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+  <%= f.label :genre %>
+
+  <%= f.select :genre, 
+  [["春", "春"], 
+  ["夏", "夏"], 
+  ["秋", "秋"],
+  ["冬", "冬"]], include_blank: "選択して下さい" %>
+</div>
+  </div>
+
+  <div class="field">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+  <%= f.label :about %>
+  <%= f.text_field :about %>
+  </div>
+
+  <div class="field">
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+  </div>
+  
+  <%= f.submit "Tweetする" %>
+  <% end %>

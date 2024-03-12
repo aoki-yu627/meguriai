@@ -1,0 +1,30 @@
+<div class="tweet">
+  <p><%= @sweet.genre %></p>
+  <%= image_tag @sweet.image_url, size: "250x200" if @sweet.image? %>
+  <p><%= @sweet.name%></p>
+  <p><%= @sweet.about %></p>
+  <p><%= @sweet.url %></p>
+</div>
+
+<div class="comment-wrapper">
+  <p>コメント一覧</p>
+  <% @comments.each do |c| %>
+    <div>
+      <%= c.user.email unless c.user.blank? %>
+      <br>
+      <%= c.content %>
+    </div>
+      <br>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <%= form_with(model: [@sweet, @comment], local: true) do |f| %>
+      <%= f.text_area :content %>
+      <%= button_tag type: "submit" do %>
+        <i class="far fa-comments"></i> コメントする
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to "トップページ", sweets_path %>
