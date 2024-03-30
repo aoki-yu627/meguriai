@@ -1,27 +1,18 @@
 class SweetsController < ApplicationController
-  before_action :authenticate_user!
-
-  def index
-   
+  before_action :authenticate_user!, except: [:index, :spring, :summer, :autumn, :winter, :show]
+  def index 
     if params[:search] == nil
       @sweets= Sweet.all
-    elsif params[:search] == ''
+     elsif params[:search] == ''
       @sweets= Sweet.all
-    else
-      @sweets = Sweet.where("about LIKE ? ",'%' + params[:search] + '%')
-      @sweets = Sweet.where("name LIKE ? ",'%' + params[:search] + '%')
+     else
+      @sweets = Sweet.where("name LIKE ? or about LIKE ? ",'%' + params[:search] + '%','%' + params[:search] + '%')
     end
+  
   end
 
+
  def search
-   if params[:search] == nil
-    @sweets= Sweet.all
-   elsif params[:search] == ''
-    @sweets= Sweet.all
-   else
-    @sweets = Sweet.where("about LIKE ? ",'%' + params[:search] + '%')
-    @sweets = Sweet.where("name LIKE ? ",'%' + params[:search] + '%')
-   end
  end
 
 def itiran

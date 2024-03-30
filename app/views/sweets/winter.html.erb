@@ -1,25 +1,32 @@
-<h3>冬</h3>
+<div class="winter">
 
 
+<div class="container5">
+ <div class="win">
+ <%= image_tag "fuyu2.jpg"%>
+ <h3>冬の和菓子</h3>
+ </div>
 
+ <div class="win1">
+    うぐいす餅<br>
+    <h4><%= link_to "詳細へ", sweet_path(42) %></h4>
+ </div>
 
-<% @winters.each do |t| %>
+ <div class="win2">
+    kuki<br>
+    <h4><%= link_to "詳細へ", sweet_path(43) %></h4>
+ </div>
 
+ <div class="win3">
+    花びら餅<br>
+    <h4><%= link_to "詳細へ", sweet_path(44) %></h4>
+ </div>
 
+ <div class="win4">
+   林檎<br>
+ <h4><%= link_to "詳細へ", sweet_path(45) %></h4>
+</div>
 
-              <div class="gurume">
-               <p><%= t.name %><br></p>
-               <p><%= image_tag t.image_url, size: "250x200" if t.image? %></p>              
-              </div>
-
-            
-              <div class="itirann4">
-              <%= link_to "詳細へ", sweet_path(t.id) %>
-              <%= link_to "編集する", edit_sweet_path(t.id) %>
-              <%= link_to "新規投稿ページへ", new_sweet_path(t.id) %>
-              <%= link_to "削除する", sweet_path(t.id), method: :delete %>
-                
-              </div>
-
-<% end %>
+<a href="http://localhost:3000/?search=">トップページへ</a>
+</div>
 

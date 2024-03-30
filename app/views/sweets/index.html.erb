@@ -1,41 +1,84 @@
 <div class="main">
-<%= form_tag({controller:"sweets",action:"search"}, method: :get) do %>
-  <%= text_field_tag :search %>
-  <%= submit_tag '検索する'  %>
-  <% end %>
 
-<h1>めぐりあい</h1>
+<div class="search-form-6">   
+<%= form_tag({controller:"sweets",action:"index"}, method: :get) do %>
+<%= text_field_tag :search, nil, placeholder: "キーワードで検索" %>
+<% end %>
+</div>
 
-  <div class="topimage">
-  <%= image_tag "sample.jpg.jpg", style: "width: 1000px"%>
+<%if params[:search] != "" && params[:search] != nil%>
+
+ <div class="search-container">
+    <% @sweets.each do |t| %>
+      <div class="">
+      
+       <%= image_tag t.image_url, size: "500x400" if t.image? %>
+       <%= t.name %>
+       
+        <%= link_to "詳細へ", sweet_path(t.id) %>
+    
+        
+        </div>
+      <% end %>
+
+ <%else%>
+ <div class="square">
+
+   <div class="text">
+    <h1>めぐりあい</h1>
+   </div>
+ </div>
+  <div class="topimage3">
+   <div class="topimage2">
+      <div class="image src1" class="absolute"></div>
+      <div class="image src2" class="absolute"></div>
+      <div class="image src3" class="absolute"></div>
+    </div>
   </div>
+
+  
+
+  <div class="explanation">
+  <h2>「おいしい」も「かわいい」も好き。</h2>
+  <h3>洋菓子に比べて手に取られにくい和菓子。</h3>
+  <h4>けれど繊細な手作業によって生まれる和菓子特有の良さも知ってもらえたら・・・</h4>
+  <h5>そんな気持ちで生まれたサイトです。</h5>
+  <h6>Click your favorite season↓</h6>
 
   <div class="container">
    <div class="springimg">
-   <%= image_tag "春イメージ.jpg"%>
+    <a href="http://localhost:3000/sweets/spring">
+    <%= image_tag "spring.2.jpg"%>
+    <p>春</p>
+    </a>
    </div>
 
    <div class="summerimg">
-   <%= image_tag "summer.jpg"%>
+    <a href="http://localhost:3000/sweets/summer">
+    <%= image_tag "summer.3.jpg"%>
+    <p>夏</p>
+    </a>
    </div>
 
    <div class="autumnimg">
-   <%= image_tag "autumn.jpg"%>
+    <a href="http://localhost:3000/sweets/autumn">
+    <%= image_tag "autumn.jpg"%>
+    </a>
+    <p>秋</p>
    </div>
 
    <div class="winterimg">
-   <%= image_tag "冬イメージ.jpg"%>
+    <a href="http://localhost:3000/sweets/winter">
+    <%= image_tag "winter.jpg"%>
+    </a>
+    <p>冬</p>
    </div>
   </div>
 
   
-      <%= link_to "一覧へ戻る", sweets_itiran_path %>
-      <%= link_to "春", sweets_spring_path %>
-      <%= link_to "夏", sweets_summer_path %>
-      <%= link_to "秋", sweets_autumn_path %>
-      <%= link_to "冬", sweets_winter_path %>
 
 
 
-
+ </div>
 </div>
+<%end%>

@@ -1,26 +1,34 @@
+<div class="spring">
 
-<h3>春</h3>
+    
+    <div class="container2">
+    <div class="spr">
+    <%= image_tag "haru.jpg"%>
+    </div>
+    <h3>春の和菓子</h3>
+
+    <div class="spr1">
+    感謝の花<br>
+    <h4><%= link_to "詳細へ", sweet_path(37) %></h4>
+    </div>
+
+    <div class="spr2">
+    豆乳どら焼き桜餡<br>
+    <h4><%= link_to "詳細へ", sweet_path(28) %></h4>
+    </div>
+
+    <div class="spr3">
+    桜もなか<br>
+    <h4><%= link_to "詳細へ", sweet_path(29) %></h4>
+    </div>
+
+    <div class="spr4">
+    焼き鳳瑞<br>
+    <h4><%= link_to "詳細へ", sweet_path(30) %></h4>
+    </div>
+    </div>
+
+    <a href="http://localhost:3000/?search=">トップページへ</a>
 
 
-
-
-<% @springs.each do |t| %>
-
-
-
-              <div class="gurume">
-               <p><%= t.name %><br></p>
-               <p><%= image_tag t.image_url, size: "250x200" if t.image? %></p>              
-              </div>
-
-            
-              <div class="itirann4">
-              <%= link_to "詳細へ", sweet_path(t.id) %>
-              <%= link_to "編集する", edit_sweet_path(t.id) %>
-              <%= link_to "新規投稿ページへ", new_sweet_path(t.id) %>
-              <%= link_to "削除する", sweet_path(t.id), method: :delete %>
-                
-              </div>
-
-<% end %>
-
+</div>

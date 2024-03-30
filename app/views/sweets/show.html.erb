@@ -1,6 +1,7 @@
+<div class="show">
+
 <div class="tweet">
-  <p><%= @sweet.genre %></p>
-  <%= image_tag @sweet.image_url, size: "250x200" if @sweet.image? %>
+  <%= image_tag @sweet.image_url, size: "500x400" if @sweet.image? %>
   <p><%= @sweet.name%></p>
   <p><%= @sweet.about %></p>
   <p><%= @sweet.url %></p>
@@ -28,3 +29,4 @@
 </div>
 
 <%= link_to "トップページ", sweets_path %>
+</div>
