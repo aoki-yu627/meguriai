@@ -47,32 +47,31 @@
 
   <div class="container">
    <div class="springimg">
-    <a href="http://localhost:3000/sweets/spring">
+    <%= link_to sweets_spring_path do %>
     <%= image_tag "spring.2.jpg"%>
     <p>春</p>
-    </a>
+    <% end %>
    </div>
 
    <div class="summerimg">
-    <a href="http://localhost:3000/sweets/summer">
+   <%= link_to sweets_summer_path do %>
     <%= image_tag "summer.3.jpg"%>
     <p>夏</p>
-    </a>
+    <% end %>
    </div>
 
    <div class="autumnimg">
-    <a href="http://localhost:3000/sweets/autumn">
+   <%= link_to sweets_autumn_path do %>
     <%= image_tag "autumn.jpg"%>
-    </a>
     <p>秋</p>
+   <% end %>
    </div>
 
    <div class="winterimg">
-    <a href="http://localhost:3000/sweets/winter">
+   <%= link_to sweets_winter_path do %>
     <%= image_tag "winter.jpg"%>
-    </a>
     <p>冬</p>
-   </div>
+   <% end %>
   </div>
 
   
